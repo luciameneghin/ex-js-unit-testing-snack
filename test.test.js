@@ -1,5 +1,5 @@
 // test.test.js
-const { getInitials, createSlug, average, split, isPalindrome, createSlugSafe } = require("./test.js");
+const { getInitials, createSlug, average, split, isPalindrome, createSlugSafe, findPostById } = require("./test.js");
 
 let input;
 
@@ -45,3 +45,28 @@ test("La funzione isPalindrome verifica se una stringa è un palindromo.", () =>
 test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
   expect(() => createSlugSafe("")).toThrow("Il titolo non può essere vuoto");
 })
+
+//Snack 7
+const posts = [
+  { id: 1, title: "Post 1", slug: "Contenuto del post 1" },
+  { id: 2, title: "Post 2", slug: "Contenuto del post 2" },
+  { id: 3, title: "Post 3", slug: "Contenuto del post 3" }
+];
+
+test("La funzione findPostById restituisce il post corretto dato l’array di post e l’id", () => {
+  const result = findPostById(posts, 2);
+  expect(result).toBe(posts[1])
+})
+
+test('Ogni post ha un id, un title e uno slug', () => {
+  posts.forEach(post => {
+    expect(post).toHaveProperty('id');
+    expect(post).toHaveProperty('title');
+    expect(post).toHaveProperty('slug');
+  })
+})
+
+test('La funzione resituisce undefined se l’id non esiste', () => {
+  const result = findPostById(posts, 10);
+  expect(result).toBeUndefined();
+});

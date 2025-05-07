@@ -35,6 +35,10 @@ const createSlugSafe = (stringa) => {
   return stringa.toLowerCase().split(" ").join("-");
 }
 
+// Snack 7
+const findPostById = (posts, id) => {
+  return posts.find(post => post.id === id);
+}
 
 module.exports = {
   getInitials,
@@ -42,5 +46,6 @@ module.exports = {
   average,
   split,
   isPalindrome,
-  createSlugSafe
+  createSlugSafe,
+  findPostById
 }
