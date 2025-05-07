@@ -1,3 +1,4 @@
+//Snack 1 
 const getInitials = (name) => {
   const words = name.split(" ");
 
@@ -6,6 +7,13 @@ const getInitials = (name) => {
   return initials;
 }
 
+
+// Snack 2
+const createSlug = (stringa) => {
+  const slug = stringa.toLowerCase();
+  return slug;
+}
 module.exports = {
-  getInitials
+  getInitials,
+  createSlug
 }
