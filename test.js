@@ -25,9 +25,15 @@ const split = (stringa) => {
 }
 
 
+// Snack 5
+const isPalindrome = (stringa) => {
+  return stringa.split('').reverse().join('');
+}
+
 module.exports = {
   getInitials,
   createSlug,
   average,
-  split
+  split,
+  isPalindrome
 }

@@ -1,6 +1,6 @@
 // test.test.js
 
-const { getInitials, createSlug, average, split } = require("./test.js");
+const { getInitials, createSlug, average, split, isPalindrome } = require("./test.js");
 
 let input;
 
@@ -35,3 +35,9 @@ test("La funzione split sostituisce gli spazi con - e converte in lowercase.", (
   const result = split(input);
   expect(result).toBe("hello-world");
 });
+
+// Snack 5
+test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
+  const result = isPalindrome('osso');
+  expect(result).toBeTruthy();
+})
