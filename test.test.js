@@ -1,6 +1,5 @@
 // test.test.js
-
-const { getInitials, createSlug, average, split, isPalindrome } = require("./test.js");
+const { getInitials, createSlug, average, split, isPalindrome, createSlugSafe } = require("./test.js");
 
 let input;
 
@@ -40,4 +39,9 @@ test("La funzione split sostituisce gli spazi con - e converte in lowercase.", (
 test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
   const result = isPalindrome('osso');
   expect(result).toBeTruthy();
+})
+
+// Snack 6
+test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
+  expect(() => createSlugSafe("")).toThrow("Il titolo non può essere vuoto");
 })

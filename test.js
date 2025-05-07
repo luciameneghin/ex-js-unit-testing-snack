@@ -1,5 +1,3 @@
-const { beforeEach } = require("jest-circus");
-
 //Snack 1 
 const getInitials = (name) => {
   const words = name.split(" ");
@@ -24,16 +22,25 @@ const split = (stringa) => {
   return stringa.toLowerCase().split(" ").join("-");
 }
 
-
 // Snack 5
 const isPalindrome = (stringa) => {
   return stringa.split('').reverse().join('');
 }
+
+// Snack 6
+const createSlugSafe = (stringa) => {
+  if (!stringa) {
+    throw new Error("Il titolo non può essere vuoto");
+  }
+  return stringa.toLowerCase().split(" ").join("-");
+}
+
 
 module.exports = {
   getInitials,
   createSlug,
   average,
   split,
-  isPalindrome
+  isPalindrome,
+  createSlugSafe
 }
